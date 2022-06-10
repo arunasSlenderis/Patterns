@@ -4,12 +4,22 @@
   "description": "",
   "main": "factory.js",
   "scripts": {
-    "ts-watch": "npx tsc --watch"
+    "test": "jest",
+    "test-watch": "jest --watchAll",
+    "ts-watch": "rm -R dist & npx tsc --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
+    "@types/jest": "^28.1.1",
+    "babel-jest": "^28.1.1",
+    "jest": "^28.1.1",
+    "ts-jest": "^28.0.4",
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.2"
   }
 }

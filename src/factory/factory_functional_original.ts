@@ -1,4 +1,4 @@
-import { WeaponCreator, WeaponFactoryCreator } from '../types';
+import { WeaponCreator, WeaponFactoryCreator } from './types';
 
 function Sword(this: WeaponCreator, damage: number) {
   this.damage = damage;

@@ -1,7 +1,7 @@
-import { WeaponType } from '../types';
+import { WeaponType } from './types';
 
-class Weapon {
-  public type!: WeaponType;
+export class Weapon {
+  public type: WeaponType = 'Sword';
 
   constructor(public damage: number) {
     this.damage = damage;
@@ -12,7 +12,7 @@ class Weapon {
   }
 }
 
-class Sword extends Weapon {
+export class Sword extends Weapon {
   public override type: WeaponType;
   
   constructor(damage: number) {
@@ -21,7 +21,7 @@ class Sword extends Weapon {
   }
 }
 
-class Bow extends Weapon {
+export class Bow extends Weapon {
   public override type: WeaponType;
 
   constructor(damage: number) {
@@ -32,18 +32,8 @@ class Bow extends Weapon {
 
 const AVAILABLE_TYPES = { Sword, Bow };
 
-class WeaponFactory {
+export class WeaponFactory {
   create(damage: number, type: WeaponType) {
     return new AVAILABLE_TYPES[type](damage);
   }
 }
-
-// Testing
-
-const weaponFactory = new WeaponFactory();
-
-const longSword = weaponFactory.create(25, 'Sword');
-longSword.use();
-
-const longBow = weaponFactory.create(100, 'Bow');
-longBow.use();
